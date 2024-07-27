@@ -13,6 +13,7 @@ const Navbar = () => {
   const [ activeMenu, setActiveMenu ] = useState<string | null>(null);
 
   const hiddenPaths = [
+    "/make-claim",
     "/get-quote",
     "/buy-policy",
     "/get-started",

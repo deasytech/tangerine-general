@@ -10,7 +10,7 @@ const ClaimProcess = () => {
         <h5 className="regular-14 text-orange-base uppercase">how to make a claim</h5>
         <h3 className="bold-48 text-orange-base">Claims Process</h3>
         <p className="regular-16 text-generic-700 pb-4">Making a claim is easy with us. Just follow these simple steps to get the support you need:</p>
-        <Link href="/">
+        <Link href="/make-claim">
           <Button variant="secondary" size="lg">Make a Claim</Button>
         </Link>
       </div>
