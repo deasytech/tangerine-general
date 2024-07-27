@@ -1,0 +1,93 @@
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import MoreLinks from '@/components/general/MoreLinks'
+import TangerineLifeBenefitBanner from '@/components/general/TangerineLifeBenefitBanner'
+import LifeInsuranceCard from '@/components/general/cards/LifeInsuranceCard'
+import { GENERAL_INSURANCE } from '@/constants/general'
+import { Button } from '@/components/ui/button'
+
+const TangLifePage = () => {
+  return (
+    <>
+      <section className="relative max-container padding-container mt-32">
+        <div className="h-[640px] bg-cover bg-center" style={{
+          backgroundImage: "url('/images/general-banner.png')",
+          borderRadius: '32px',
+          overflow: 'hidden',
+        }}>
+          <div className="px-10 md:ml-32 h-full flex flex-col justify-center items-start w-full md:w-1/2">
+            <h1 className="bold-32 lg:bold-56 items-center mb-3 text-white !font-gilroy-black">
+              Cover<br />all angles
+            </h1>
+            <p className="text-[28px] !font-gilroy-medium text-white max-w-lg">General Insurance helps you cover the big things and little things with a broad range of products and services built for your business and personal life.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-container padding-container text-center mt-20">
+        <div className="h-full flex flex-col justify-start items-center w-full gap-6">
+          <h2 className="bold-48 text-orange-base w-full md:w-1/2">Superior protection for your people and product</h2>
+          <p className="regular-18 text-generic-700 w-full md:w-1/2">Life happens. Plans kick the bucket. So our life insurance plans will always be there to take care of you and the people you cherish most.</p>
+        </div>
+      </section>
+
+      <section className="relative max-container padding-container mt-20">
+        <div className="mb-14 flex flex-col gap-4 px-10">
+          <p className="regular-14 !font-gilroy-semibold text-orange-base uppercase py-2 px-4 bg-orange-50 w-fit rounded-xl">our plans</p>
+          <h2 className="bold-48 text-orange-base max-w-md">
+            Choose a cover that's right for you.
+          </h2>
+          <p className="regular-18 !leading-[26px] max-w-md text-generic-500">With a variety of plans to choose from, get one that meets your present and future needs.</p>
+        </div>
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="bg-orange-900 w-full p-12 flex flex-col gap-4 rounded-2xl">
+            <p className='regular-14 uppercase text-white font-gilroy-semibold'>plans</p>
+            <h2 className="bold-48 text-white">
+              Corporate Plans
+            </h2>
+            <p className='regular-18 !leading-[32px] text-white'>Our corporate plans offer tailored solutions for diverse needs, including marine, aviation, agric, fire, home, travel, motor, engineering, and general accident coverage.</p>
+            <Link href="/corporate-plans">
+              <Button variant="secondary" size="lg" className="gap-2">
+                Explore plans
+                <ArrowRight size={18} />
+              </Button>
+            </Link>
+          </div>
+          <div className="bg-orange-base w-full p-12 flex flex-col gap-4 rounded-2xl">
+            <p className='regular-14 uppercase text-white font-gilroy-semibold'>plans</p>
+            <h2 className="bold-48 text-white">
+              Retail Plans
+            </h2>
+            <p className='regular-18 !leading-[32px] text-white'>Our retail plans offer tailored solutions for diverse needs, including protection, education, family welfare, comprehensive benefits, savings, and customizable coverage with the Tang Flex Plan.</p>
+            <Link href="/retail-plans">
+              <Button variant="outline" size="lg" className="gap-2">
+                Explore plans
+                <ArrowRight size={18} />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <TangerineLifeBenefitBanner />
+
+      <MoreLinks />
+
+      <section className="relative max-container padding-container mt-24">
+        <h3 className="bold-56 text-orange-base w-full md:w-1/2 mb-10">Why choose Tangerine General Insurance?</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {GENERAL_INSURANCE.map((item) =>
+            <LifeInsuranceCard
+              key={item.title}
+              image={item.image}
+              title={item.title}
+              description={item.description}
+            />
+          )}
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default TangLifePage
