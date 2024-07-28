@@ -14,7 +14,7 @@ const MoreLinks = () => {
         <Link href="/" className="w-full">
           <Button variant="secondary" size="lg" className="w-full">RENEW MY POLICY</Button>
         </Link>
-        <Link href="/get-started" className="w-full">
+        <Link href="/" className="w-full">
           <Button variant="secondary" size="lg" className="w-full">VERIFY MOTOR POLICY</Button>
         </Link>
       </div>
