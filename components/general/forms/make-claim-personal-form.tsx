@@ -69,7 +69,7 @@ const MakeClaimPersonalForm: React.FC<MakeClaimPersonalFormProps> = ({ onNext })
             name="policyNumber"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Full name</FormLabel>
+                <FormLabel>Policy Number</FormLabel>
                 <FormControl>
                   <Input
                     className="no-focus text-base light-border-2 min-h-[56px] border"
