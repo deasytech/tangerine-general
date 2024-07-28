@@ -9,10 +9,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="Aviation Insurance" />
-          <h1 className="bold-56 text-orange-900">Aviation Insurance</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Aviation Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">Aviation insurance provides coverage for aircraft, airlines, airports, and related liabilities against various risks associated with aviation operations. This type of insurance is designed to protect owners, operators, pilots, passengers, and third parties from financial losses resulting from accidents, damage, or other incidents involving aircraft.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
@@ -23,7 +23,7 @@ const Page = () => {
         </div>
       </section>
 
-      <section className="relative max-container padding-container mt-24">
+      <section className="relative max-container padding-container mt-12 md:mt-24">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="w-full py-6 bg-white rounded-xl flex flex-col justify-between">
             <div className="flex-col justify-start items-start gap-2 flex my-8">

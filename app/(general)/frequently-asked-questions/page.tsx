@@ -12,8 +12,8 @@ import Link from "next/link"
 const FAQPage = () => {
   return (
     <>
-      <section className="max-container padding-container relative mt-44">
-        <h1 className="bold-56 text-orange-base !font-gilroy-semibold w-full md:w-1/2 mb-4">Frequently Asked Questions</h1>
+      <section className="max-container padding-container relative mt-24 md:mt-44">
+        <h1 className="bold-32 md:bold-56 text-orange-base !font-gilroy-semibold w-full md:w-1/2 mb-4">Frequently Asked Questions</h1>
         <p className="regular-18 text-orange-950 !font-gilroy-medium w-full md:w-1/2">Here are some of the frequently asked questions about our plans. We hope you find the answers helpful.</p>
 
         <div className="flex flex-col md:flex-row gap-10 mt-20">

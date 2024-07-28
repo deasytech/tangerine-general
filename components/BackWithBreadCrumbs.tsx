@@ -20,10 +20,10 @@ const BackWithBreadCrumbs = ({ page, more, textTheme }: Props) => {
       <Button onClick={router.back} variant="link" size="icon" className="p-0">
         <ArrowLeftIcon size={18} className="text-gray-500" />
       </Button>
-      <p className="text-gray-400 regular-16">Back</p>
-      <p className="text-gray-400 regular-16">Plans / </p>
-      {more && <Link href={more.link} className="text-gray-400 regular-16 hover:text-orange-base">{more?.label} / </Link>}
-      <p className={cn("text-orange-base regular-16", textTheme)}>{page}</p>
+      <p className="text-gray-400 regular-14">Back</p>
+      <p className="text-gray-400 regular-14 text-nowrap">Plans / </p>
+      {more && <Link href={more.link} className="text-gray-400 text-nowrap regular-14 hover:text-orange-base">{more?.label} / </Link>}
+      <p className={cn("text-orange-base regular-14 text-nowrap", textTheme)}>{page}</p>
     </div>
   )
 }

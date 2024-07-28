@@ -9,10 +9,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs more={{ label: "Motor Insurance", link: "/corporate-plans/motor-insurance" }} page="Third Party" />
-          <h1 className="bold-56 text-orange-900">Third Party</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Third Party</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">This policy provides protection to the person that buys it, for death or injury to a third party and the damages to the property of the third party caused from the use of your motor vehicle.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>

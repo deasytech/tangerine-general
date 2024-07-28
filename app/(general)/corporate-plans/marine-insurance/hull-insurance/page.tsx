@@ -9,10 +9,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs more={{ label: "Marine Insurance", link: "/corporate-plans/marine-insurance" }} page="Hull Insurance" />
-          <h1 className="bold-56 text-orange-900">Hull Insurance</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Hull Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">Hull insurance is a type of insurance coverage that specifically protects the physical hull or structure of a vessel, such as a ship or boat. It provides financial protection against a range of risks, including damage to the hull caused by accidents, collisions, grounding, fire, piracy, and other perils.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>

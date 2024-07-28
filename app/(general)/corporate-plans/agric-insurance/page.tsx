@@ -9,10 +9,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-32 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="Agric Insurance" />
-          <h1 className="bold-56 text-orange-900">Agric Insurance</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Agric Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">We understand that every farm is different, with its own set of challenges and opportunities. That's why we offer customized insurance solutions that are tailored to meet your specific needs and circumstances. Whether you're a small-scale organic farm or a large-scale commercial operation, our experienced agents will work with you to design a policy that fits your requirements and budget.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
@@ -24,7 +24,7 @@ const Page = () => {
       </section>
 
       <section className="relative max-container padding-container mt-20">
-        <div className="bg-orange-50 flex gap-6 w-full items-start p-14 rounded-2xl">
+        <div className="bg-orange-50 flex gap-6 w-full items-start p-8 rounded-2xl">
           <Image src="/icons/tht/spark.svg" alt="Wellness" width={48} height={48} className="hidden md:flex" />
           <div className="regular-20 text-white space-y-4">
             <h5 className="text-orange-800 bold-32">Comprehensive agric insurance </h5>

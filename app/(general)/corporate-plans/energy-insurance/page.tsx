@@ -9,10 +9,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="Energy Insurance" />
-          <h1 className="bold-56 text-orange-900">Energy Insurance</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Energy Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">Energy insurance is a type of insurance coverage designed to protect businesses operating in the energy sector from various risks associated with their operations. These risks can include property damage, business interruption, liability claims, environmental damage, and other hazards specific to the energy industry.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
@@ -28,7 +28,7 @@ const Page = () => {
           <div className="w-full py-6 bg-white rounded-xl flex flex-col justify-between">
             <div className="flex-col justify-start items-start gap-2 flex my-8">
               <h3 className="regular-24 text-orange-base">Benefits</h3>
-              <div className="regular-16 leading-4 text-generic-950" dangerouslySetInnerHTML={{ __html: "Energy Package Policy covers all risks of physical loss and destruction to the insured properties (including Legal liability arising thereof) to the properties of the insured or arising out of the insured's operations." }} />
+              <div className="regular-16 leading-4 text-generic-950" dangerouslySetInnerHTML={{ __html: `<p>Energy Package Policy covers all risks of physical loss and destruction to the insured properties (including Legal liability arising thereof) to the properties of the insured or arising out of the insured's operations.</p>` }} />
             </div>
           </div>
           <div className="w-full py-6 bg-white rounded-xl flex flex-col justify-between">

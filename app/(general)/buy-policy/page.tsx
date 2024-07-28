@@ -20,7 +20,7 @@ const BookSessionPage = () => {
 
         <div className="flex flex-col w-full gap-6 pb-16">
           <div className="space-y-6 mb-4">
-            <h3 className="text-green-base text-5xl font-normal font-gilroy-semibold leading-10">Buy a policy</h3>
+            <h3 className="text-green-base text-3xl md:text-5xl font-normal font-gilroy-semibold leading-10">Buy a policy</h3>
             <p className="text-neutral-500 text-lg font-normal font-gilroy-semibold">Thank you for expressing interest in our products. You are few steps away from covering all that matters to you. Please fill out the short form and we will get back to you.</p>
           </div>
           <BuyPolicyForm />

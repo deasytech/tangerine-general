@@ -49,7 +49,7 @@ const MobileNavbar: React.FC = () => {
             <SheetTitle>
               <Link href="/">
                 <Image
-                  src="/images/life/logo.svg"
+                  src="/images/general/logo.svg"
                   alt="Tangerine Africa"
                   width={127}
                   height={40}
@@ -66,7 +66,7 @@ const MobileNavbar: React.FC = () => {
                 {link.subMenu ? (
                   <>
                     <button
-                      className="w-full regular-16 text-black flex justify-between p-3 items-center gap-2 cursor-pointer transition-all"
+                      className="w-full regular-16 text-black flex justify-between p-3 my-3 items-center gap-2 cursor-pointer transition-all"
                       onClick={() => handleSubMenuToggle(link.key)}
                     >
                       {link.label}

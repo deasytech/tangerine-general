@@ -12,12 +12,12 @@ const SlugPage = ({ params }: ParamsProps) => {
 
   return (
     <>
-      <section className="relative max-container padding-container mt-44">
+      <section className="relative max-container padding-container mt-24 md:mt-44">
         <GoBackButton text="Back to Blog posts" />
 
         <div className="flex flex-col gap-3 w-full">
           <p className="uppercase text-sm font-semibold text-generic-800 mt-8">{post?.category || "world insurance day"}</p>
-          <h1 className="bold-48 text-generic-950 !font-gilroy-medium">{post?.title || "Insurance Made Easy"}</h1>
+          <h1 className="bold-32 md:bold-48 text-generic-950 !font-gilroy-medium">{post?.title || "Insurance Made Easy"}</h1>
           <p className="text-base text-generic-800 !font-gilroy-regular">The prevalence of asthma and allergic rhinitis in Nigeria is high with variabilities across regions and age groups. The number of persons with clinical asthma in Nigeria (approximately 13 million) ranks among the highest in Africa.</p>
           <p className="text-base text-generic-800 !font-gilroy-regular">{post?.date || "3rd May 2022, 5 mins"}</p>
         </div>

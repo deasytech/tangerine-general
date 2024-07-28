@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import React, { useState } from 'react';
 
 interface Tab {
@@ -110,16 +110,17 @@ const ContactTabs: React.FC = () => {
 
   return (
     <div className="max-container w-full">
-      <div className="flex gap-10">
+      <div className="flex flex-col md:flex-row gap-6">
         <div className='flex items-center gap-2'>
-          <p className='regular-18 text-generic-950'>Select a business</p>
-          <ArrowRight size={16} className='text-generic-950' />
+          <p className='regular-18 text-generic-950 text-nowrap'>Select a business</p>
+          <ArrowRight size={16} className='text-generic-950 max-sm:hidden' />
+          <ArrowDown size={16} className='text-generic-950 md:hidden' />
         </div>
         {tabs.map((tab) => (
           <button
             key={tab.key}
             onClick={() => handleTabClick(tab.key)}
-            className={`py-2 px-4 transition-all ${activeTab === tab.key
+            className={`text-nowrap py-2 px-4 transition-all ${activeTab === tab.key
               ? 'rounded-full bg-orange-base text-white hover:bg-orange-400'
               : 'border rounded-full border-orange-950 text-orange-950 hover:border-orange-base hover:text-orange-base'
               }`}

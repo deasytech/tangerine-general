@@ -6,15 +6,15 @@ const Page = () => {
   return (
     <section className="relative max-container padding-container">
       <div className='max-container pt-40 pb-16'>
-        <h1 className='bold-56 text-orange-base mb-2'>Contact us</h1>
+        <h1 className='bold-32 md:bold-56 text-orange-base mb-2'>Contact us</h1>
         <p className='regular-18 text-generic-700'>Get in touch with any of our business touch points.</p>
       </div>
 
       <ContactTabs />
 
       <div className="mt-6 bg-orange-50 p-10 w-full md:w-2/3 space-y-3 rounded-3xl">
-        <h3 className="text-orange-base text-4xl font-gilroy-medium">Still Have Questions?</h3>
-        <div className="flex gap-6 justify-between items-center text-base text-orange-base font-gilroy-light">
+        <h3 className="text-orange-base text-2xl md:text-4xl font-gilroy-medium">Still Have Questions?</h3>
+        <div className="flex gap-6 justify-between items-center text-sm md:text-base text-orange-base font-gilroy-light text-nowrap">
           <p>We're here to help</p>
           <p>For General Inquiries</p>
         </div>

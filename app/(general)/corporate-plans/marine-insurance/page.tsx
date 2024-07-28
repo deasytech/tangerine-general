@@ -9,10 +9,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="Marine Insurance" />
-          <h1 className="bold-56 text-orange-900">Marine Insurance</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Marine Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">We understand that every maritime venture is unique, which is why we offer tailored insurance solutions that are customized to fit your specific needs and requirements.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
@@ -24,7 +24,7 @@ const Page = () => {
       </section>
 
       <section className="relative max-container padding-container mt-20">
-        <div className="bg-orange-50 flex gap-6 w-full items-start p-14 rounded-2xl">
+        <div className="bg-orange-50 flex gap-6 w-full items-start p-8 rounded-2xl">
           <Image src="/icons/tht/spark.svg" alt="Wellness" width={48} height={48} className="hidden md:flex" />
           <div className="regular-20 text-white space-y-4">
             <h5 className="text-orange-800 bold-32">Comprehensive marine insurance</h5>

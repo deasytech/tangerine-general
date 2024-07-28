@@ -2,8 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BackWithBreadCrumbs from '@/components/BackWithBreadCrumbs'
 import { Button } from '@/components/ui/button'
-import AvailableRidersCard from '@/components/general/cards/AvailableRidersCard'
-import { FIRE_PLANS } from '@/constants/general'
 import MoreLinks from '@/components/general/MoreLinks'
 import { ArrowRight, PlusCircle } from 'lucide-react'
 import ClaimProcess from '@/components/ClaimProcess'
@@ -15,7 +13,7 @@ const Page = () => {
       <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="Aviation & Energy" />
-          <h1 className="bold-56 text-orange-900">Aviation & Energy</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Aviation & Energy</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">Aviation insurance and energy insurance are distinct types of insurance, each tailored to the specific risks and needs of their respective industries.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>

@@ -9,10 +9,10 @@ import { ArrowRight, PlusCircle } from 'lucide-react'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="Engineering Insurance" />
-          <h1 className="bold-56 text-orange-900">Engineering Insurance</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Engineering Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">provides comprehensive coverage for a wide range of engineering projects and ventures. Whether you're involved in construction, infrastructure development, manufacturing, or technology innovation, our policies are designed to protect you against the unique risks and challenges you face.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
@@ -24,7 +24,7 @@ const Page = () => {
       </section>
 
       <section className="relative max-container padding-container mt-20">
-        <div className="bg-orange-50 flex gap-6 w-full items-start p-14 rounded-2xl">
+        <div className="bg-orange-50 flex gap-6 w-full items-start p-8 rounded-2xl">
           <Image src="/icons/tht/spark.svg" alt="Wellness" width={48} height={48} className="hidden md:flex" />
           <div className="regular-20 text-white space-y-4">
             <h5 className="text-orange-800 bold-32">Comprehensive engineering insurance</h5>

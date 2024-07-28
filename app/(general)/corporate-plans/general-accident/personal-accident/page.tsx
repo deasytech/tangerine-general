@@ -8,10 +8,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs more={{ label: "General Accident", link: "/corporate-plans/general-accident" }} page="Personal Accident" />
-          <h1 className="bold-56 text-orange-900">Personal Accident</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Personal Accident</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">Personal accident insurance covers injuries from accidents by reimbursing your medical costs and also provides compensation in case of death or disability caused by an accident</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>

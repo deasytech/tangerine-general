@@ -8,10 +8,10 @@ import FAQComponent from '@/components/FAQ'
 const Page = () => {
   return (
     <>
-      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-36">
+      <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-start w-full mt-24 md:mt-36">
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs more={{ label: "Fire Insurance", link: "/corporate-plans/fire-insurance" }} page="Burglary" />
-          <h1 className="bold-56 text-orange-900">Burglary</h1>
+          <h1 className="bold-32 md:bold-56 text-orange-900">Burglary</h1>
           <p className="regular-16 text-generic-950 !leading-[145%]">Our burglary insurance policy is a type of policy that provides you with coverage for the financial loss or damage that you may suffer due to burglary, theft or attempted burglary into your house or business premises. At times the homes and business places of people are filled with valuables like art, jewelry, and expensive furniture, burglary insurance protects in the event of a theft.</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
