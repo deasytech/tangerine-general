@@ -6,7 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import MobileNavbar from "@/components/general/MobileNavbar";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -90,13 +91,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <Image
-          src="/icons/menu.svg"
-          alt="hand burger"
-          width={32}
-          height={32}
-          className="cursor-pointer lg:hidden"
-        />
+        <MobileNavbar />
       </nav>
     </div>
   );
