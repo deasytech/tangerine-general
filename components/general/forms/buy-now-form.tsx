@@ -13,37 +13,45 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { toast } from "@/components/ui/use-toast"
 import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
 import { ArrowRight } from "lucide-react"
+import { countriesList } from "@/constants/general"
 
 const productList = [
-  {
-    id: "group-life-assurance",
-    label: "Group Life Assurance",
-  },
-  {
-    id: "credit-life-insurance",
-    label: "Credit Life Insurance",
-  },
-] as const
+  { "id": "hull-insurance", "label": "Hull Insurance" },
+  { "id": "aviation-insurance", "label": "Aviation Insurance" },
+  { "id": "agric-insurance", "label": "Agric Insurance" },
+  { "id": "multi-perils", "label": "Multi Perils" },
+  { "id": "poultry", "label": "Poultry" },
+  { "id": "area-yield-index", "label": "Area Yield Index" },
+  { "id": "travel-insurance", "label": "Travel Insurance" },
+  { "id": "burglary", "label": "Burglary" },
+  { "id": "householder", "label": "Householder" },
+  { "id": "general-accident", "label": "General Accident" },
+  { "id": "homeowner", "label": "Homeowner" },
+  { "id": "erection-all-risk", "label": "Erection All Risk" },
+  { "id": "personal-accident", "label": "Personal Accident" },
+  { "id": "product-liability", "label": "Product Liability" }
+] as const;
 
 const FormSchema = z.object({
-  fullName: z.string().min(1),
-  email: z.string().email().min(1),
-  telephone: z.string().min(11).max(11),
-  product: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one item.",
-  }),
+  companyName: z.string().min(1),
+  employees: z.string().email().min(1),
+  countries: z.string().min(1),
+  product: z.string().min(1),
 })
 
 export function GetQuoteForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      product: [],
-    },
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
@@ -62,7 +70,7 @@ export function GetQuoteForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <FormField
           control={form.control}
-          name="fullName"
+          name="companyName"
           render={({ field }) => (
             <FormItem className="space-y-1.5 w-full">
               <FormLabel>Full name</FormLabel>
@@ -80,7 +88,7 @@ export function GetQuoteForm() {
         <div className="flex gap-6">
           <FormField
             control={form.control}
-            name="email"
+            name="employees"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full">
                 <FormLabel>Number of employees</FormLabel>
@@ -97,17 +105,22 @@ export function GetQuoteForm() {
           />
           <FormField
             control={form.control}
-            name="telephone"
+            name="countries"
             render={({ field }) => (
-              <FormItem className="space-y-1.5 w-full">
-                <FormLabel>Choose countries</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Countries"
-                    className="no-focus text-base light-border-2 min-h-[56px] border"
-                    {...field}
-                  />
-                </FormControl>
+              <FormItem className="space-y-1.5 w-full text-start">
+                <FormLabel>Product Range</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl className="no-focus text-base light-border-2 min-h-[56px] border">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select country" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {countriesList && countriesList.map((product) => <SelectItem key={product.id} value={product.id}>
+                      {product.label}
+                    </SelectItem>)}
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -115,17 +128,22 @@ export function GetQuoteForm() {
         </div>
         <FormField
           control={form.control}
-          name="fullName"
+          name="product"
           render={({ field }) => (
-            <FormItem className="space-y-1.5 w-full">
-              <FormLabel>Product range</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="Select product"
-                  className="no-focus text-base light-border-2 min-h-[56px] border"
-                  {...field}
-                />
-              </FormControl>
+            <FormItem className="space-y-1.5 w-full text-start">
+              <FormLabel>Product Range</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl className="no-focus text-base light-border-2 min-h-[56px] border">
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select product" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {productList && productList.map((product) => <SelectItem key={product.id} value={product.id}>
+                    {product.label}
+                  </SelectItem>)}
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}

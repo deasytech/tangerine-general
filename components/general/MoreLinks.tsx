@@ -5,17 +5,17 @@ const MoreLinks = () => {
   return (
     <section className="relative bg-orange-50 mt-20">
       <div className="max-container padding-container py-10 flex flex-col md:flex-row gap-4 items-center justify-between">
-        <Link href="/contact" className="w-full">
-          <Button variant="secondary" size="lg" className="w-full">SELF SERVICE</Button>
+        <Link href="/contact" className="w-full text-orange-base hover:bg-orange-base hover:text-white rounded-md">
+          <div className="w-full py-2 text-center font-bold text-xl">SELF SERVICE</div>
         </Link>
-        <Link href="/make-claim" className="w-full">
-          <Button variant="secondary" size="lg" className="w-full">MAKE A CLAIM</Button>
+        <Link href="/make-claim" className="w-full text-orange-base hover:bg-orange-base hover:text-white rounded-md">
+          <div className="w-full py-2 text-center font-bold text-xl">MAKE A CLAIM</div>
         </Link>
-        <Link href="/" className="w-full">
-          <Button variant="secondary" size="lg" className="w-full">RENEW MY POLICY</Button>
+        <Link href="/renew-policy" className="w-full text-orange-base hover:bg-orange-base hover:text-white rounded-md">
+          <div className="w-full py-2 text-center font-bold text-xl">RENEW MY POLICY</div>
         </Link>
-        <Link href="/" className="w-full">
-          <Button variant="secondary" size="lg" className="w-full">VERIFY MOTOR POLICY</Button>
+        <Link href="https://askniid.org/VerifyPolicy.aspx" target="_blank" className="w-full text-orange-base hover:bg-orange-base hover:text-white rounded-md">
+          <div className="w-full py-2 text-center font-bold text-xl">VERIFY MOTOR POLICY</div>
         </Link>
       </div>
     </section>

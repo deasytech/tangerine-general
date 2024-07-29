@@ -15,6 +15,7 @@ const Navbar = () => {
 
   const hiddenPaths = [
     "/make-claim",
+    "/renew-policy",
     "/get-quote",
     "/buy-policy",
     "/get-started",
