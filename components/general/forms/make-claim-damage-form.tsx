@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { format } from "date-fns"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -14,18 +13,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import { Calendar } from "@/components/ui/calendar"
 import { toast } from "@/components/ui/use-toast"
 import { Input } from "@/components/ui/input"
-import { ArrowLeft, ArrowRight, CalendarIcon } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
-import { cn } from "@/lib/utils"
 
 const paymentList = [
   { id: "yes", label: "Yes" },
@@ -33,28 +25,25 @@ const paymentList = [
 ] as const;
 
 const FormSchema = z.object({
-  date: z.date({
-    required_error: "A date is required.",
-  }),
-  time: z.string().min(1),
-  accidentLocation: z.string().min(1),
-  policeStationReported: z.string().min(1),
-  numbersOfPersons: z.string().min(1),
-  description: z.string().min(20),
-  witness: z.array(z.string()).refine((value) => value.some((item) => item), {
+  damageDescription: z.string().min(20),
+  vehicleLocation: z.string().min(1),
+  repairEstimate: z.string().min(1),
+  reporterName: z.string().min(1),
+  reporterAddress: z.string().min(1),
+  thirdParty: z.array(z.string()).refine((value) => value.some((item) => item), {
     message: "You have to select at least one item.",
   }),
 });
 
-type MakeClaimParticularsFormProps = {
+type MakeClaimDamageFormProps = {
   onNext: VoidFunction;
   onPrevious: VoidFunction;
 };
 
-const MakeClaimParticularsForm: React.FC<MakeClaimParticularsFormProps> = ({ onNext, onPrevious }) => {
+const MakeClaimDamageForm: React.FC<MakeClaimDamageFormProps> = ({ onNext, onPrevious }) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues: { witness: [] },
+    defaultValues: { thirdParty: [] },
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
@@ -75,100 +64,61 @@ const MakeClaimParticularsForm: React.FC<MakeClaimParticularsFormProps> = ({ onN
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
-            name="date"
+            name="damageDescription"
             render={({ field }) => (
-              <FormItem className="flex flex-col items-start">
-                <FormLabel>Date</FormLabel>
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-full min-h-[56px] pl-3 text-left font-normal border-gray-200 hover:text-gray-600 text-gray-600",
-                          !field.value && "text-gray-400"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4" />
-                      </Button>
-                    </FormControl>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
-                      }
-                      initialFocus
+              <FormItem className="space-y-1.5 w-full text-start">
+                <FormLabel>Full details of Damaged Part</FormLabel>
+                <FormControl>
+                  <Textarea
+                    className="resize-none no-focus text-base light-border-2 border"
+                    rows={6}
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="space-y-4">
+            <FormField
+              control={form.control}
+              name="vehicleLocation"
+              render={({ field }) => (
+                <FormItem className="space-y-1.5 w-full text-start">
+                  <FormLabel>Present Location of Vehicle</FormLabel>
+                  <FormControl>
+                    <Input
+                      className="no-focus text-base light-border-2 min-h-[56px] border"
+                      {...field}
                     />
-                  </PopoverContent>
-                </Popover>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="repairEstimate"
+              render={({ field }) => (
+                <FormItem className="space-y-1.5 w-full text-start">
+                  <FormLabel>Rough Estimate Of repair</FormLabel>
+                  <FormControl>
+                    <Input
+                      className="no-focus text-base light-border-2 min-h-[56px] border"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <FormField
             control={form.control}
-            name="accidentLocation"
+            name="reporterName"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Exact Location of Accident</FormLabel>
-                <FormControl>
-                  <Input
-                    className="no-focus text-base light-border-2 min-h-[56px] border"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="time"
-            render={({ field }) => (
-              <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Time</FormLabel>
-                <FormControl>
-                  <Input
-                    type="time"
-                    className="no-focus text-base light-border-2 min-h-[56px] border"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="policeStationReported"
-            render={({ field }) => (
-              <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Address of Police Station Accident was reported</FormLabel>
-                <FormControl>
-                  <Input
-                    className="no-focus text-base light-border-2 min-h-[56px] border"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="numbersOfPersons"
-            render={({ field }) => (
-              <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>No. of Person in (i) Insured Vehicle</FormLabel>
+                <FormLabel>Repairer's Name</FormLabel>
                 <FormControl>
                   <Input
                     className="no-focus text-base light-border-2 min-h-[56px] border"
@@ -182,14 +132,13 @@ const MakeClaimParticularsForm: React.FC<MakeClaimParticularsFormProps> = ({ onN
           <div>
             <FormField
               control={form.control}
-              name="description"
+              name="reporterAddress"
               render={({ field }) => (
                 <FormItem className="space-y-1.5 w-full text-start">
-                  <FormLabel>Full Description of Accident</FormLabel>
+                  <FormLabel>Repairer's Address</FormLabel>
                   <FormControl>
-                    <Textarea
-                      className="resize-none no-focus text-base light-border-2 border"
-                      rows={6}
+                    <Input
+                      className="no-focus text-base light-border-2 min-h-[56px] border"
                       {...field}
                     />
                   </FormControl>
@@ -198,10 +147,10 @@ const MakeClaimParticularsForm: React.FC<MakeClaimParticularsFormProps> = ({ onN
               )}
             />
             <div className="flex items-center gap-3 mt-4">
-              <FormLabel>Were there any witness?</FormLabel>
+              <FormLabel>Were there Third Party Involved?</FormLabel>
               <FormField
                 control={form.control}
-                name="witness"
+                name="thirdParty"
                 render={() => (
                   <FormItem>
                     <div className="flex flex-wrap gap-4">
@@ -209,7 +158,7 @@ const MakeClaimParticularsForm: React.FC<MakeClaimParticularsFormProps> = ({ onN
                         <FormField
                           key={item.id}
                           control={form.control}
-                          name="witness"
+                          name="thirdParty"
                           render={({ field }) => (
                             <FormItem
                               key={item.id}
@@ -256,4 +205,4 @@ const MakeClaimParticularsForm: React.FC<MakeClaimParticularsFormProps> = ({ onN
   )
 }
 
-export default MakeClaimParticularsForm
+export default MakeClaimDamageForm

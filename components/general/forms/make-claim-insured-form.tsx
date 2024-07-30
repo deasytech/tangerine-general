@@ -16,24 +16,32 @@ import {
 import { toast } from "@/components/ui/use-toast"
 import { Input } from "@/components/ui/input"
 import { ArrowLeft, ArrowRight } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+
+const paymentList = [
+  { id: "yes", label: "Yes" },
+  { id: "no", label: "No" },
+] as const;
 
 const FormSchema = z.object({
-  accountName: z.string().min(1),
-  accountNumber: z.string().min(1),
-  bankName: z.string().min(1),
-  accountType: z.string().min(1),
-  bvn: z.string().min(11).max(11),
+  make: z.string().min(1),
+  registrationNumber: z.string().min(1),
+  yearOfMake: z.string().min(1),
+  usePurpose: z.string().min(1),
+  accident: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one item.",
+  }),
 });
 
-type MakeClaimBankFormProps = {
+type MakeClaimInsuredFormProps = {
   onNext: VoidFunction;
   onPrevious: VoidFunction;
 };
 
-const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPrevious }) => {
+const MakeClaimInsuredForm: React.FC<MakeClaimInsuredFormProps> = ({ onNext, onPrevious }) => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues: {},
+    defaultValues: { accident: [] },
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
@@ -54,7 +62,7 @@ const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPreviou
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
-            name="accountName"
+            name="make"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
                 <FormLabel>Account Name</FormLabel>
@@ -70,10 +78,10 @@ const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPreviou
           />
           <FormField
             control={form.control}
-            name="accountNumber"
+            name="registrationNumber"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Bank Account Number</FormLabel>
+                <FormLabel>Registration Number</FormLabel>
                 <FormControl>
                   <Input
                     className="no-focus text-base light-border-2 min-h-[56px] border"
@@ -86,10 +94,10 @@ const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPreviou
           />
           <FormField
             control={form.control}
-            name="bankName"
+            name="yearOfMake"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Name of Bank</FormLabel>
+                <FormLabel>Year of Make</FormLabel>
                 <FormControl>
                   <Input
                     className="no-focus text-base light-border-2 min-h-[56px] border"
@@ -102,10 +110,10 @@ const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPreviou
           />
           <FormField
             control={form.control}
-            name="accountType"
+            name="usePurpose"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Type of Account</FormLabel>
+                <FormLabel>Purpose being used</FormLabel>
                 <FormControl>
                   <Input
                     className="no-focus text-base light-border-2 min-h-[56px] border"
@@ -116,22 +124,50 @@ const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPreviou
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="bvn"
-            render={({ field }) => (
-              <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>BVN</FormLabel>
-                <FormControl>
-                  <Input
-                    className="no-focus text-base light-border-2 min-h-[56px] border"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="flex items-center justify-between gap-3">
+            <FormLabel>Were you the one driving at the time of accident?</FormLabel>
+            <FormField
+              control={form.control}
+              name="accident"
+              render={() => (
+                <FormItem>
+                  <div className="flex flex-wrap gap-4">
+                    {paymentList.map((item) => (
+                      <FormField
+                        key={item.id}
+                        control={form.control}
+                        name="accident"
+                        render={({ field }) => (
+                          <FormItem
+                            key={item.id}
+                            className="flex flex-row items-start space-x-3 space-y-0"
+                          >
+                            <FormControl>
+                              <Checkbox
+                                className="w-6 h-6"
+                                checked={field.value?.includes(item.id)}
+                                onCheckedChange={(checked) => {
+                                  return checked
+                                    ? field.onChange([ ...field.value, item.id ])
+                                    : field.onChange(
+                                      field.value?.filter((value) => value !== item.id)
+                                    );
+                                }}
+                              />
+                            </FormControl>
+                            <FormLabel className="text-sm font-normal">
+                              {item.label}
+                            </FormLabel>
+                          </FormItem>
+                        )}
+                      />
+                    ))}
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
         </div>
         <div className="flex items-center justify-end gap-8">
           <Button variant="outline" type="button" size="sm" className="gap-2" onClick={onPrevious}>
@@ -146,4 +182,4 @@ const MakeClaimBankForm: React.FC<MakeClaimBankFormProps> = ({ onNext, onPreviou
   )
 }
 
-export default MakeClaimBankForm
+export default MakeClaimInsuredForm
