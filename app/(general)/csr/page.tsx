@@ -17,7 +17,7 @@ const CSRPage = () => {
       </section>
 
       {CSR_PHOTOS.map((csr, key) =>
-        <section key={key} className="relative max-container padding-container mt-32">
+        <section key={key} className="relative max-container padding-container mt-32 space-y-3">
           <div className="w-full space-y-2 max-w-xl">
             <p className="regular-14 text-generic-950 uppercase">{csr.subTitle}</p>
             <h3 className="bold-40 text-orange-base font-gilroy-semibold">{csr.title}</h3>
