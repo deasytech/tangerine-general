@@ -108,7 +108,7 @@ export function GetQuoteForm() {
             name="countries"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
-                <FormLabel>Product Range</FormLabel>
+                <FormLabel>Country</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl className="no-focus text-base light-border-2 min-h-[56px] border">
                     <SelectTrigger>

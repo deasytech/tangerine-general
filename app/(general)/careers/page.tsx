@@ -16,7 +16,7 @@ const CareersPage = () => {
       }}>
         <div className="h-full flex flex-col justify-start items-center mt-44 w-full gap-6">
           <p className='regular-14 font-gilroy-semibold text-generic-500 uppercase'>careers at tangerine</p>
-          <h1 className="bold-32 lg:bold-56 items-center text-center text-blue-950 w-full md:w-1/3">
+          <h1 className="bold-32 lg:bold-56 items-center text-center text-orange-950 w-full md:w-1/3">
             Unlock opportunities. Express your Tang.
           </h1>
           <p className="regular-18 text-center text-generic-700 w-full p-4 md:p-0 md:w-1/3">
@@ -50,7 +50,7 @@ const CareersPage = () => {
 
       <section className="relative max-container padding-container mt-20">
         <div className="mb-14 max-w-md">
-          <h2 className="bold-40 text-blue-950 mb-4">
+          <h2 className="bold-40 text-orange-950 mb-4">
             Our Core Values
           </h2>
           <p className='regular-18 font-gilroy-medium text-generic-700'>
@@ -145,7 +145,7 @@ const CareersPage = () => {
       </section>
 
       <section className="relative max-container padding-container mt-20">
-        <div className="w-full min-h-[372px] flex justify-start items-center bg-blue-950 rounded-3xl" style={{
+        <div className="w-full min-h-[372px] flex justify-start items-center bg-orange-950 rounded-3xl" style={{
           backgroundImage: "url('/images/tang-building.svg')",
           backgroundPosition: "bottom right",
           backgroundSize: "contain",
