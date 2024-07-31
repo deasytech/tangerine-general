@@ -26,8 +26,8 @@ const TangLifePage = () => {
 
       <section className="max-container padding-container text-center mt-10 md:mt-20">
         <div className="h-full flex flex-col justify-start items-center w-full gap-6">
-          <h2 className="bold-32 md:bold-48 text-orange-base w-full md:w-1/2">Superior protection for your people and product</h2>
-          <p className="regular-18 text-generic-700 w-full md:w-1/2">Life happens. Plans kick the bucket. So our life insurance plans will always be there to take care of you and the people you cherish most.</p>
+          <h2 className="bold-32 md:bold-48 text-orange-base w-full md:w-1/2">General Insurance solutions for all that matters</h2>
+          <p className="regular-18 text-generic-700 w-full md:w-1/2">Tangerine General Insurance provides comprehensive, reliable, and innovative non-life insurance solutions that protect what matters most to your business and you, maximizing asset protection while minimizing liability exposure.</p><p className="regular-18 text-generic-700 w-full md:w-1/2">We offer a wide range of products designed to meet the diverse needs of businesses, individuals and families.</p>
         </div>
       </section>
 

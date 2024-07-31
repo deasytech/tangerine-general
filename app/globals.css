@@ -110,20 +110,28 @@ body {
     @apply mb-3 leading-8;
   }
 
+  .regular-16 a {
+    @apply text-orange-base hover:underline;
+  }
+
   .regular-16 strong {
     @apply font-gilroy-bold;
   }
 
   .regular-16 ul {
-    @apply list-disc ml-3 space-y-2;
+    @apply list-disc ml-3 space-y-2 mb-3;
   }
 
   .regular-16 ol {
-    @apply space-y-2;
+    @apply space-y-2 mb-3;
+  }
+
+  .regular-16 h2 {
+    @apply text-2xl font-gilroy-semibold mb-3;
   }
 
   .regular-16 h3 {
-    @apply text-2xl font-gilroy-bold;
+    @apply text-xl font-gilroy-semibold mb-3;
   }
 
   .regular-14 {
