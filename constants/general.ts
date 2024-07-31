@@ -59,7 +59,7 @@ export const FOOTER_LINKS = [
     title: "Company",
     links: [
       { name: "About us", href: "/about-us" },
-      { name: "Our Impact", href: "/our-impact" },
+      { name: "Our Impact", href: "/" },
       { name: "Careers", href: "/careers" },
       { name: "Leadership", href: "/leadership-team" },
     ],
@@ -95,7 +95,7 @@ export const FOOTER_LINKS = [
     title: "Media centre",
     links: [
       { name: "Blog", href: "/blog" },
-      { name: "Media Center", href: "/media-center" }
+      { name: "Media Center", href: "/csr" }
     ],
   },
 ];
@@ -580,29 +580,39 @@ export const FAQ = [
 
 export const DIRECTORS = [
   {
+    image: "/images/team/cardoso.svg",
+    name: "Lola Cardoso",
+    position: "Group Chief Executive Officer",
+  },
+  {
     image: "/images/team/kwairanga.png",
     name: "Dr Umaru Kwairanga",
-    position: "",
+    position: "Chairman, Board of Directors",
   },
   {
     image: "/images/team/adeduro.png",
     name: "Ademayowa Adeduro",
-    position: "",
+    position: "Chairman, Board of Directors",
   },
   {
     image: "/images/team/onejeme.png",
     name: "Ije Onejeme",
-    position: "",
+    position: "Executive Director, Tangerine General",
   },
   {
     image: "/images/team/giwa-amu.png",
     name: "Subulade Giwa-Amu",
-    position: "",
+    position: "Executive Director, Tangerine General",
   },
   {
     image: "/images/team/agbo.png",
     name: "Uchenna Agbo",
-    position: "",
+    position: "Non-Executive Director",
+  },
+  {
+    image: "/images/team/odusanya.png",
+    name: "Wale Odusanya",
+    position: "Non-Executive Director",
   },
 ];
 
@@ -664,15 +674,34 @@ export const CSR_PHOTOS = [
     title: "Recycle For Scholarship Initiative",
     subTitle: "Sneak Peek of our CSR Initiatives",
     photos: [
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
-      "/images/team/no-image.png",
+      { src: "/images/gallery/1.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/2.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 428 },
+      { src: "/images/gallery/3.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/4.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/5.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/6.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 324 },
+      { src: "/images/gallery/7.png", alt: "Recycle For Scholarship Initiative", width: 384, height: 240 },
+      { src: "/images/gallery/8.png", alt: "Recycle For Scholarship Initiative", width: 176, height: 240 },
+      { src: "/images/gallery/9.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/10.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/11.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+    ]
+  },
+  {
+    title: "Recycle For Scholarship Initiative",
+    subTitle: "Sneak Peek of our CSR Initiatives",
+    photos: [
+      { src: "/images/gallery/12.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/13.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 428 },
+      { src: "/images/gallery/14.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/15.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/16.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/17.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 324 },
+      { src: "/images/gallery/18.png", alt: "Recycle For Scholarship Initiative", width: 384, height: 240 },
+      { src: "/images/gallery/19.png", alt: "Recycle For Scholarship Initiative", width: 176, height: 240 },
+      { src: "/images/gallery/20.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/21.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
+      { src: "/images/gallery/22.png", alt: "Recycle For Scholarship Initiative", width: 280, height: 240 },
     ]
   },
 ];

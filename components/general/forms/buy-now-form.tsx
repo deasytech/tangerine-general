@@ -39,7 +39,9 @@ const productList = [
   { "id": "homeowner", "label": "Homeowner" },
   { "id": "erection-all-risk", "label": "Erection All Risk" },
   { "id": "personal-accident", "label": "Personal Accident" },
-  { "id": "product-liability", "label": "Product Liability" }
+  { "id": "product-liability", "label": "Product Liability" },
+  { "id": "motor-comprehensive", "label": "Motor - Comprehensive" },
+  { "id": "motor-thirdparty", "label": "Motor - Third Party" },
 ] as const;
 
 const FormSchema = z.object({

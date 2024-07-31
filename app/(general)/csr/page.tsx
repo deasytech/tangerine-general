@@ -1,3 +1,4 @@
+import ImageGallery from '@/components/general/ImageGallery'
 import { CSR_PHOTOS } from '@/constants/general'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,17 +16,13 @@ const CSRPage = () => {
         </div>
       </section>
 
-      {CSR_PHOTOS.map((csr) =>
-        <section key={csr.title} className="relative max-container padding-container mt-32">
+      {CSR_PHOTOS.map((csr, key) =>
+        <section key={key} className="relative max-container padding-container mt-32">
           <div className="w-full space-y-2 max-w-xl">
             <p className="regular-14 text-generic-950 uppercase">{csr.subTitle}</p>
             <h3 className="bold-40 text-orange-base font-gilroy-semibold">{csr.title}</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
-            {csr.photos.map((img) =>
-              <Image key={img} src={img} alt={csr.title} width={382} height={264} className="w-full object-contain" />
-            )}
-          </div>
+          <ImageGallery images={csr.photos} />
         </section>
       )}
     </>
