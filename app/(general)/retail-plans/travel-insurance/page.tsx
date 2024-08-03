@@ -17,8 +17,8 @@ const Page = () => {
           <BackWithBreadCrumbs page="Travel Insurance" />
           <h1 className="bold-32 md:bold-56 text-orange-900">Travel Insurance</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">This travel insurance plan is available for travelers aged 3 months to 80 years old. Coverage lasts for 92 days (approximately 3 months) with premiums determined by a separate rate schedule.</p>
-          <Link href="/get-quote">
-            <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
+          <Link href="https://travel.tangerine.africa" target="_blank">
+            <Button variant="secondary" size="lg" className="mt-4">Purchase</Button>
           </Link>
         </div>
         <div className="w-full flex-[3]">
