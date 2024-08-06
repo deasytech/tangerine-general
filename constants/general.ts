@@ -592,7 +592,7 @@ export const DIRECTORS = [
   {
     image: "/images/team/cardoso.svg",
     name: "Lola Cardoso",
-    position: "Group Chief Executive Officer",
+    position: "Non-Executive Director",
   },
   {
     image: "/images/team/bakare.png",
@@ -602,17 +602,17 @@ export const DIRECTORS = [
   {
     image: "/images/team/onejeme.png",
     name: "Ije Onejeme",
-    position: "Executive Director, Tangerine General",
+    position: "Independent Non-Executive Director",
   },
   {
     image: "/images/team/giwa-amu.png",
     name: "Subulade Giwa-Amu",
-    position: "Executive Director, Tangerine General",
+    position: "Independent Non-Executive Director",
   },
   {
     image: "/images/team/agbo.png",
     name: "Uchenna Agbo",
-    position: "Non-Executive Director",
+    position: "Independent Non-Executive Director",
   },
   {
     image: "/images/team/odusanya.png",
