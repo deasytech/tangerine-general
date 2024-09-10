@@ -50,15 +50,15 @@ const Footer = () => {
                 <p>For General Inquiries</p>
                 <div className="flex items-center gap-3 py-2 px-4 border w-fit border-orange-base rounded-full">
                   <Mail size={16} />
-                  <p>wecare@tangerine.africa</p>
+                  <Link href="mailto:customerservice@tangerine.africa">customerservice@tangerine.africa</Link>
                 </div>
                 <div className="flex items-center gap-3 py-2 px-4 border w-fit border-orange-base rounded-full">
                   <Mail size={16} />
-                  <p>hello@tangerine.africa</p>
+                  <Link href="mailto:hello@tangerine.africa">hello@tangerine.africa</Link>
                 </div>
                 <div className="flex items-center gap-3 py-2 px-4 border w-fit border-orange-base rounded-full">
                   <Phone size={16} />
-                  <p>02-016309500</p>
+                  <Link href="tel:+2349139330003">+234 913 933 0003</Link>
                 </div>
               </div>
             </div>

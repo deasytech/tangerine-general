@@ -31,18 +31,16 @@ const ClaimFormContainer = () => {
         {step === 2 && "Vehicle Insured"}
         {step === 3 && "Particular of Accident"}
         {step === 4 && "Damage to the insured vehicle"}
-        {step === 5 && "Third Party Information"}
-        {step === 6 && "Declaration"}
+        {step === 5 && "Declaration"}
       </p>
       <div className="max-w-sm mx-auto mt-2 mb-10">
-        <ProgressBar step={step} totalSteps={8} />
+        <ProgressBar step={step} totalSteps={5} />
       </div>
       {step === 1 && <MakeClaimPersonalForm onNext={handleNextStep} />}
       {step === 2 && <MakeClaimInsuredForm onNext={handleNextStep} onPrevious={handlePreviousStep} />}
       {step === 3 && <MakeClaimParticularsForm onNext={handleNextStep} onPrevious={handlePreviousStep} />}
       {step === 4 && <MakeClaimDamageForm onNext={handleNextStep} onPrevious={handlePreviousStep} />}
-      {step === 5 && <MakeClaimThirdpartyForm onNext={handleNextStep} onPrevious={handlePreviousStep} />}
-      {step === 6 && <MakeClaimDeclarationForm onPrevious={handlePreviousStep} />}
+      {step === 5 && <MakeClaimDeclarationForm onPrevious={handlePreviousStep} />}
     </div>
   );
 };

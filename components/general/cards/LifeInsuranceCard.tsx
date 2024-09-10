@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { naira } from '@/lib/utils'
 
 interface Props {
   image: string;

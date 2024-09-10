@@ -13,7 +13,7 @@ const Page = () => {
         <div className="w-full space-y-3 flex-[2]">
           <BackWithBreadCrumbs page="General Accident Insurance" />
           <h1 className="bold-32 md:bold-56 text-orange-900">General Accident Insurance</h1>
-          <p className="regular-18 text-generic-950 !leading-[145%]">Your home is more than just a place to live - it's where memories are made, families grow, and dreams take shape. However, unforeseen events like natural disasters, theft, or accidents can threaten the safety and security of your sanctuary</p>
+          <p className="regular-18 text-generic-950 !leading-[145%]">Our General Accident insurance is a type of property insurance that protects you against group and personal accidents, product and public liability and goods in transit</p>
           <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
           </Link>

@@ -45,8 +45,8 @@ const productList = [
 ] as const;
 
 const FormSchema = z.object({
-  companyName: z.string().min(1),
-  employees: z.string().email().min(1),
+  fullName: z.string().min(1),
+  employees: z.string().min(1),
   countries: z.string().min(1),
   product: z.string().min(1),
 })
@@ -72,13 +72,13 @@ export function GetQuoteForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <FormField
           control={form.control}
-          name="companyName"
+          name="fullName"
           render={({ field }) => (
             <FormItem className="space-y-1.5 w-full">
               <FormLabel>Full name</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Company name"
+                  placeholder="Full name"
                   className="no-focus text-base light-border-2 min-h-[56px] border"
                   {...field}
                 />

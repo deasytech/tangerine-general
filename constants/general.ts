@@ -34,7 +34,7 @@ export const GENERAL_INSURANCE = [
   {
     image: "/icons/siren-on.svg",
     title: "General Insurance Policies",
-    description: "We have our treaty program and for the purpose of our unique insurance services, we partner with reputable re-insurers.We have our treaty program and for the purpose of our unique insurance services, we partner with reputable re-insurers"
+    description: "We have our treaty program and for the purpose of our unique insurance services, we partner with reputable re-insurers."
   },
   {
     image: "/icons/headset.svg",
@@ -70,6 +70,12 @@ export const FOOTER_LINKS = [
       { name: "Aviation Insurance", href: "/corporate-plans/aviation-insurance" },
       { name: "Marine Insurance", href: "/corporate-plans/marine-insurance" },
       { name: "Energy Insurance", href: "/corporate-plans/energy-insurance" },
+      { name: "Agric Insurance", href: "/corporate-plans/agric-insurance" },
+      { name: "Fire Insurance", href: "/corporate-plans/fire-insurance" },
+      { name: "Home Insurance", href: "/corporate-plans/home-insurance" },
+      { name: "General Accident", href: "/corporate-plans/general-accident" },
+      { name: "Motor Insurance", href: "/corporate-plans/motor-insurance" },
+      { name: "Engineering Insurance", href: "/corporate-plans/engineering-insurance" },
     ],
   },
   {
@@ -200,11 +206,6 @@ export const PLANS = [
     text: "Our fire insurance policy shields your building from a range of destructive events, including fire, storms, lightning, vandalism, and overflowing tanks.",
   },
   {
-    title: "Family Welfare Plan",
-    link: "/retail-plans/family-welfare-plan",
-    text: "An annual renewable term assurance that pays out the sum assured in the event of the policyholders' death.",
-  },
-  {
     title: "Householder Comprehensive",
     link: "/retail-plans/householder-comprehensive",
     text: "This insurance safeguards your home and belongings against burglary, fire, and other perils.",
@@ -240,22 +241,22 @@ export const CORPORATE_PLANS = [
   {
     title: "Home Insurance",
     link: "/corporate-plans/home-insurance",
-    text: "This travel insurance plan is available for travelers aged 3 months to 80 years old. Coverage lasts for 92 days (approximately 3 months) with premiums determined by a separate rate schedule.",
+    text: "Your home is more than just a place to live - it's where memories are made, families grow, and dreams take shape. However, unforeseen events like natural disasters, theft, or accidents can threaten the safety and security of your sanctuary",
   },
   {
     title: "General Accident",
     link: "/corporate-plans/general-accident",
-    text: "This travel insurance plan is available for travelers aged 3 months to 80 years old. Coverage lasts for 92 days (approximately 3 months) with premiums determined by a separate rate schedule.",
+    text: "Our General Accident insurance is a type of property insurance that protects you against group and personal accidents, product and public liability and goods in transit.",
   },
   {
     title: "Motor Insurance",
     link: "/corporate-plans/motor-insurance",
-    text: "This travel insurance plan is available for travelers aged 3 months to 80 years old. Coverage lasts for 92 days (approximately 3 months) with premiums determined by a separate rate schedule.",
+    text: "Unparalleled protection for your vehicle. This comprehensive insurance plan offers the ultimate peace of mind for your car.",
   },
   {
     title: "Engineering Insurance",
     link: "/corporate-plans/engineering-insurance",
-    text: "This travel insurance plan is available for travelers aged 3 months to 80 years old. Coverage lasts for 92 days (approximately 3 months) with premiums determined by a separate rate schedule.",
+    text: "provides comprehensive coverage for a wide range of engineering projects and ventures. Whether you're involved in construction, infrastructure development, manufacturing, or technology innovation...",
   },
 ];
 
@@ -529,17 +530,12 @@ export const FAQ = [
   {
     id: "1",
     question: "What is Tangerine General Insurance?",
-    answer: "Tangerine General Insurance is a type of insurance company that provides various insurance products to individuals and businesses. These products typically include auto insurance, home insurance, renters insurance, and other types of property and casualty coverage.",
+    answer: "Tangerine General Insurance is an insurance company, licensed to transact non-life insurance businesses, such as Fire Insurance, Burglary Insurance, Energy Package, Aviation Insurance, Motor Insurance, Marine Hull & Marine Cargo Insurance, etc.",
   },
   {
     id: "2",
     question: "What types of insurance products does Tangerine General offer?",
-    answer: "Tangerine provides online tools and resources to help you calculate your coverage needs based on factors such as income, debts, and future financial goals.",
-  },
-  {
-    id: "3",
-    question: "What types of insurance products does Tangerine General offer?",
-    answer: "Yes, Tangerine offers customizable options allowing you to tailor your policy to fit your specific needs and budget.",
+    answer: "Tangerine General Insurance provides a wide range of non-life insurance policies such as (but not limited to) – Fire, Burglary, Aviation, Energy Package, Construction All Risks, Plant All Risks, Marine Cargo & Marine Hull, Motor Insurance, etc.",
   },
   {
     id: "4",
@@ -633,14 +629,14 @@ export const MANAGEMENT = [
     position: "Head, Legal & Compliance",
   },
   {
-    image: "/images/team/onyegbula.png",
-    name: "Franklin Onyegbula",
-    position: "Chief Financial Officer",
-  },
-  {
     image: "/images/team/uwague.png",
     name: "Ehiz Uwague",
     position: "Chief Risk Officer",
+  },
+  {
+    image: "/images/team/onyegbula.png",
+    name: "Franklin Onyegbula",
+    position: "Chief Financial Officer",
   },
   {
     image: "/images/team/ajayi.png",
@@ -655,12 +651,12 @@ export const MANAGEMENT = [
   {
     image: "/images/team/famoye.png",
     name: "Motunrayo Famoye",
-    position: "Ag. Head HR",
+    position: "Ag. Head Human Resources",
   },
   {
     image: "/images/team/adeyinka.png",
     name: "Oladunni Adeyinka",
-    position: "Ag. Internal Control",
+    position: "Ag. Head Internal Control",
   },
   {
     image: "/images/team/shajobi.png",
@@ -863,9 +859,9 @@ We take appropriate measures to ensure that your Personal Data is only processed
 <br><h3>8.Reporting</h3><br>An individual who observes, or becomes aware of a reportable misconduct, as defined within the Policy, has an obligation to report that conduct. Reports must be made in accordance with the requirements stipulated below.
 <br>8.1 Whistle blowing Channels<br><br>The channels and procedures for whistle blowing or raising complaints shall depend on whether the allegation, complaint or information is being made or disclosed by a staff member or by a party external to the Company.
 <br>Staff Members
-<br>Staff members are expected to whistle blow on transactions, operations and any other activities of the Company that involve fraud, corruption and misconduct, whether internal or external via the dedicated email address whistleblow@tangerine.africa
+<br>Staff members are expected to whistle blow on transactions, operations and any other activities of the Company that involve fraud, corruption and misconduct, whether internal or external via the dedicated email address tangerineafrica.whistleblow@oalpconsulting.com
 <br>External Parties
-<br>Parties external to the Company, however, are required to bring allegations and complaints of corruption, fraud and any other misconduct in the execution of any business of the Company or project(s) related to the Company to the knowledge of the Company via the Whistle blowing link on the Company's website or send an email to whistleblow@tangerine.africa
+<br>Parties external to the Company, however, are required to bring allegations and complaints of corruption, fraud and any other misconduct in the execution of any business of the Company or project(s) related to the Company to the knowledge of the Company via the Whistle blowing link on the Company's website or send an email to tangerineafrica.whistleblow@oalpconsulting.com
 <br>All communications made via the dedicated email address and the whistle blowing portal will be received by the Head of Internal Audit, Chief Compliance Officer and Managing Director/CEO.
 <br>8.2 Minimum Information Required for a Whistle blowing Report<br><br>1. Name of officer(s) involved<br>2. Nature of misconduct<br>3. Date of occurrence<br>4. Estimated value of loss to the Company (if any)<br>5. Specific evidence of occurrence of the misconduct
 <br><h3>9. Confidential &amp; Anonymous Whistle blowing</h3><br>The Company wishes to assure the safety of whistle blowing, and therefore provides whistle blowers with the option of either confidential whistle blowing or anonymous whistle blowing.
