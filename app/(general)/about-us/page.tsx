@@ -12,7 +12,7 @@ const AboutUsPage = () => {
       <section className="relative max-container padding-container flex flex-col gap-12 md:flex-row items-center w-full mt-24 md:mt-32">
         <div className="w-full space-y-3 flex-[2]">
           <h1 className="bold-32 md:bold-48 text-orange-950">Who we are</h1>
-          <p className="regular-16 md:regular-18 text-orange-950 !leading-[165%]">At Tangerine General, we're more than just an insurance company - we are your committed ally on the path to a brighter future. With a focus on deep consumer insights and cutting-edge technology, we've tailored our products to meet the diverse needs of our customers.</p>
+          <p className="regular-16 md:regular-18 text-orange-950 !leading-[165%]">At Tangerine General, we are more than just an insurance company - we are your committed ally on the path to a brighter future. With a focus on deep consumer insights and cutting-edge technology, we've tailored our products to meet the diverse needs of our customers.</p>
         </div>
         <div className="w-full flex-[3]">
           <Image src="/images/general/about-us-banner.png" alt="About us" width={696} height={364} className="w-full object-contain" />

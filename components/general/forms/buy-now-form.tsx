@@ -46,7 +46,7 @@ const productList = [
 
 const FormSchema = z.object({
   fullName: z.string().min(1),
-  employees: z.string().min(1),
+  email: z.string().min(1),
   countries: z.string().min(1),
   product: z.string().min(1),
 })
@@ -90,13 +90,13 @@ export function GetQuoteForm() {
         <div className="flex gap-6">
           <FormField
             control={form.control}
-            name="employees"
+            name="email"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full">
-                <FormLabel>Number of employees</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder="Number of employees needing cover?"
+                    placeholder="Email"
                     className="no-focus text-base light-border-2 min-h-[56px] border"
                     {...field}
                   />
