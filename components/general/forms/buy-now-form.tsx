@@ -48,6 +48,7 @@ const FormSchema = z.object({
   fullName: z.string().min(1),
   email: z.string().min(1),
   countries: z.string().min(1),
+  states: z.string().min(1),
   product: z.string().min(1),
 })
 
@@ -56,15 +57,47 @@ export function GetQuoteForm() {
     resolver: zodResolver(FormSchema),
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    })
+  const onSubmit = async (data: z.infer<typeof FormSchema>) => {
+    console.log(JSON.stringify(data, null, 2))
+    try {
+      const response = await fetch("http://localhost:3001/api/get-quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit the data");
+      }
+
+      const result = await response.json();
+      console.log("Response from server:", result);
+
+      toast({
+        title: "Data submitted successfully",
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <div className="text-white">
+              {Object.entries(data).map(([ key, value ]) => (
+                <div key={key} className="flex justify-between mb-2">
+                  <span className="font-semibold">{key}:</span>
+                  <span>{value}</span>
+                </div>
+              ))}
+            </div>
+          </pre>
+        ),
+      });
+    } catch (error) {
+      console.error("Error submitting data:", error);
+      toast({
+        title: "Error",
+        description: "There was an issue submitting the form",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -107,6 +140,30 @@ export function GetQuoteForm() {
           />
           <FormField
             control={form.control}
+            name="product"
+            render={({ field }) => (
+              <FormItem className="space-y-1.5 w-full text-start">
+                <FormLabel>Product Range</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl className="no-focus text-base light-border-2 min-h-[56px] border">
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select product" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    {productList && productList.map((product) => <SelectItem key={product.id} value={product.id}>
+                      {product.label}
+                    </SelectItem>)}
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="flex gap-6">
+          <FormField
+            control={form.control}
             name="countries"
             render={({ field }) => (
               <FormItem className="space-y-1.5 w-full text-start">
@@ -127,29 +184,24 @@ export function GetQuoteForm() {
               </FormItem>
             )}
           />
-        </div>
-        <FormField
-          control={form.control}
-          name="product"
-          render={({ field }) => (
-            <FormItem className="space-y-1.5 w-full text-start">
-              <FormLabel>Product Range</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl className="no-focus text-base light-border-2 min-h-[56px] border">
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select product" />
-                  </SelectTrigger>
+          <FormField
+            control={form.control}
+            name="states"
+            render={({ field }) => (
+              <FormItem className="space-y-1.5 w-full">
+                <FormLabel>State</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Enter your state"
+                    className="no-focus text-base light-border-2 min-h-[56px] border"
+                    {...field}
+                  />
                 </FormControl>
-                <SelectContent>
-                  {productList && productList.map((product) => <SelectItem key={product.id} value={product.id}>
-                    {product.label}
-                  </SelectItem>)}
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <Button variant="secondary" type="submit" size="lg" className="gap-2">Submit <ArrowRight size={16} /> </Button>
       </form>
     </Form>

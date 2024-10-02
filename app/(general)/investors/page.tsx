@@ -68,7 +68,7 @@ const InvestorsPage = () => {
             text="Profit before tax"
           />
           <KeyFigures
-            price="16.39B"
+            price="16.30B"
             linkHref="/"
             image="/icons/lighting-bolt.svg"
             text="Shareholders' funds"
