@@ -13,6 +13,9 @@ body {
 }
 
 @layer utilities {
+  .link {
+    @apply text-orange-base hover:text-gray-500;
+  }
   .btn_white {
     @apply bg-white px-8 py-3 text-blue-950;
   }
