@@ -22,8 +22,9 @@ import {
 } from "@/components/ui/select"
 import { toast } from "@/components/ui/use-toast"
 import { Input } from "@/components/ui/input"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
 import { countriesList } from "@/constants/general"
+import { useState } from "react"
 
 const productList = [
   { "id": "hull-insurance", "label": "Hull Insurance" },
@@ -53,12 +54,24 @@ const FormSchema = z.object({
 })
 
 export function GetQuoteForm() {
+  const [ isSubmitting, setIsSubmitting ] = useState(false);
+
+  const defaultValues = {
+    fullName: "",
+    email: "",
+    countries: "",
+    states: "",
+    product: "",
+  };
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    defaultValues
   })
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
-    console.log(JSON.stringify(data, null, 2))
+    setIsSubmitting(true);
+
     try {
       const response = await fetch("http://localhost:3001/api/get-quote", {
         method: "POST",
@@ -90,6 +103,8 @@ export function GetQuoteForm() {
           </pre>
         ),
       });
+
+      form.reset(defaultValues);
     } catch (error) {
       console.error("Error submitting data:", error);
       toast({
@@ -97,6 +112,8 @@ export function GetQuoteForm() {
         description: "There was an issue submitting the form",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -202,7 +219,10 @@ export function GetQuoteForm() {
             )}
           />
         </div>
-        <Button variant="secondary" type="submit" size="lg" className="gap-2">Submit <ArrowRight size={16} /> </Button>
+        <Button variant="secondary" type="submit" size="lg" className="gap-2" disabled={isSubmitting}>
+          {isSubmitting ? <Loader2 className="animate-spin" size={16} /> : 'Submit'}
+          {!isSubmitting && <ArrowRight size={16} />}
+        </Button>
       </form>
     </Form>
   )
