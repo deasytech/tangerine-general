@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/form"
 import { toast } from "@/components/ui/use-toast"
 import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
 import { ArrowRight } from "lucide-react"
+import { useState } from "react"
 
 const productList = [
   {
@@ -39,14 +39,19 @@ const FormSchema = z.object({
 })
 
 export function BuyPolicyForm() {
+  const [ isSubmitting, setIsSubmitting ] = useState(false);
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
+      fullName: "",
+      email: "",
+      telephone: "",
       product: [],
     },
   })
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     toast({
       title: "You submitted the following values:",
       description: (
