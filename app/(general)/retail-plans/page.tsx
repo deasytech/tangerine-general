@@ -20,8 +20,8 @@ const Page = () => {
               Retail Plans
             </h1>
             <p className="text-xs md:text-lg font-gilroy-medium text-white max-w-lg">Our retail plans offer tailored solutions for diverse needs, including motor insurance, protection, mortgage, family, savings, and customizable coverage with the Tang Plans.</p>
-            <Link href="/buy-policy">
-              <Button variant="secondary" size="sm" className="gap-2">Get a Policy <ArrowRight size={18} /></Button>
+            <Link href="/get-quote">
+              <Button variant="secondary" size="sm" className="gap-2">Get a Quote <ArrowRight size={18} /></Button>
             </Link>
           </div>
         </div>

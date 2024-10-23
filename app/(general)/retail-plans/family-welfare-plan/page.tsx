@@ -15,7 +15,7 @@ const Page = () => {
           <BackWithBreadCrumbs page="Family Welfare Plan" />
           <h1 className="bold-32 md:bold-56 text-orange-900">Family Welfare Plan</h1>
           <p className="regular-18 text-generic-950 !leading-[145%]">An annual renewable term assurance that pays out the sum assured in the event of the policyholders' death.</p>
-          <Link href="/buy-policy">
+          <Link href="/get-quote">
             <Button variant="secondary" size="lg" className="mt-4">Get a Quote</Button>
           </Link>
         </div>
