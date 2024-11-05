@@ -618,16 +618,6 @@ export const DIRECTORS = [
     position: "Non-Executive Director",
   },
   {
-    image: "/images/team/onejeme.png",
-    name: "Ije Onejeme",
-    position: "Independent Non-Executive Director",
-  },
-  {
-    image: "/images/team/giwa-amu.png",
-    name: "Subulade Giwa-Amu",
-    position: "Independent Non-Executive Director",
-  },
-  {
     image: "/images/team/agbo.png",
     name: "Uchenna Agbo",
     position: "Independent Non-Executive Director",
@@ -674,11 +664,6 @@ export const MANAGEMENT = [
     image: "/images/team/famoye.png",
     name: "Motunrayo Famoye",
     position: "Ag. Head Human Resources",
-  },
-  {
-    image: "/images/team/adeyinka.png",
-    name: "Oladunni Adeyinka",
-    position: "Ag. Head Internal Control",
   },
   {
     image: "/images/team/shajobi.png",
