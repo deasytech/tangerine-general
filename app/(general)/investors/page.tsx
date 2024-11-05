@@ -89,7 +89,7 @@ const InvestorsPage = () => {
             <p className="regular-18 text-white">
               Access the Tangerine's earnings-related financial information: the 1Q and 9M activity indicators but also the half-year and annual results
             </p>
-            <Link href="/TGIL_2023_FCR_Non-Life_Report_-_Abridged_Version.pdf" target="_blank" className="w-fit px-8 py-3 bg-white rounded-lg justify-center items-center gap-3 inline-flex">
+            <Link href="/TGI_FS_2023_IFRS_17_FS_19.07.23.pdf" target="_blank" className="w-fit px-8 py-3 bg-white rounded-lg justify-center items-center gap-3 inline-flex">
               <p className="text-center text-orange-base text-base font-normal font-gilroy-semibold">Read report</p>
               <ArrowRight className="text-orange-base" />
             </Link>
